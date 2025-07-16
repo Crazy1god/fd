@@ -1,0 +1,23 @@
+{% extends 'search_articles.html' %}
+
+{% block content %}
+<h1>Поиск новостей</h1>
+
+<form method="GET">
+    {{ filter.form.as_p }}
+    <button type="submit">Искать</button>
+</form>
+
+<h2>Результаты поиска:</h2>
+<ul>
+    {% for article in filter.qs %}
+    <li>
+        <h2>{{ article.title }}</h2>
+        <p>Автор: {{ article.author }} | Дата: {{ article.pub_date|date:"d.m.Y H:i" }}</p>
+        <p>{{ article.content|truncatewords:20 }}</p>
+    </li>
+    {% empty %}
+    <li>Ничего не найдено.</li>
+    {% endfor %}
+</ul>
+{% endblock %}
