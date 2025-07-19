@@ -4,7 +4,8 @@ class Article(models.Model):
     title = models.CharField(max_length=200)
     content = models.TextField()
     author = models.CharField(max_length=100)
-    pub_date = models.DateTimeField(auto_now_add=True)
+    published_date = models.DateTimeField()
+    type = models.CharField(max_length=100)
 
     def __str__(self):
         return self.title

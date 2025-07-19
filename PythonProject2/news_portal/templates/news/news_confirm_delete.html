@@ -1,0 +1,7 @@
+<h1>Удалить новость</h1>
+<p>Вы действительно хотите удалить "{{ object.title }}"?</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Удалить</button>
+</form>
+<a href="{% url 'news_list' %}">Отмена</a>
