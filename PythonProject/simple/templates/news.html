@@ -1,0 +1,17 @@
+<! -- наследование шаблона default -->
+{% extends 'flatpages/default.html' %}
+
+{% block title %} Posts {% endblock title %}
+
+<! -- начало контента -->
+{% block content %}
+
+
+<h1>Новости</h1>
+
+{# согласно синтаксису языка шаблонов Django, #}
+<! переменные должны быть окружены двойными фигурными скобками >
+{{ news }}
+
+<! -- конец контента -->
+{% endblock content %}

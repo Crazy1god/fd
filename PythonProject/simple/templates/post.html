@@ -1,0 +1,14 @@
+<! -- наследование шаблона default -->
+{% extends 'flatpages/default.html' %}
+
+{% block title %} Post {% endblock title %}
+
+<! -- начало контента -->
+{% block content %}
+
+
+<h1><! -- тут укажем название модели --> {{ post }}</h1>
+
+
+<! -- конец контента -->
+{% endblock content %}
