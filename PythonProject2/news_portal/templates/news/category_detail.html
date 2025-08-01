@@ -1,0 +1,10 @@
+{% if user.is_authenticated %}
+    {% if not category.subscription_set.filter(user=user).exists %}
+        <form method="post" action="{% url 'subscribe_category' category.id %}">
+            {% csrf_token %}
+            <button type="submit">Подписаться на рассылку</button>
+        </form>
+    {% else %}
+        <p>Вы подписаны на эту категорию</p>
+    {% endif %}
+{% endif %}

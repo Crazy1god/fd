@@ -2,11 +2,18 @@ from django.views.generic import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from .forms import ArticleForm
 from django.core.paginator import Paginator
-from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import render, redirect, get_object_or_404
 from django_filters.views import FilterView
-from .models import Article
+from .models import Article, Category, Subscription
 from .filters import ArticleFilter
 
+@login_required
+def subscribe_category(request, category_id):
+    category = get_object_or_404(Category, id=category_id)
+    Subscription.objects.get_or_create(user=request.user, category=category)
+    # Можно добавить сообщение об успехе
+    return redirect('category_detail', pk=category_id)
 
 class NewsCreate(CreateView):
     model = Article
