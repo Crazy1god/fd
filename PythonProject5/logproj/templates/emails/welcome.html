@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Подтверждение электронной почты</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .greeting {
+            font-size: 24px;
+            font-weight: bold;
+            color: #28a745; /* Зеленый цвет для позитивного сообщения */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p class="greeting">Добро пожаловать, {{ user.email }}!</p>
+        <p>Ваш email успешно подтвержден. Теперь Вы можете войти в систему.</p>
+        <p>Спасибо за регистрацию!</p>
+        <p>С уважением,<br>Ваша команда поддержки</p>
+    </div>
+</body>
+</html>
