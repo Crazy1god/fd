@@ -1,0 +1,4 @@
+<p>У вас новое сообщение по объявлению "{{ msg.ad.title }}":</p>
+<p>От: {{ msg.sender.username }}</p>  {# Или {{ msg.sender.first_name }} {{ msg.sender.last_name }}, если есть #}
+<p>"{{ msg.text }}"</p>
+<p><a href="{% url 'ad_detail' msg.ad.id %}">Перейти к объявлению</a></p>
